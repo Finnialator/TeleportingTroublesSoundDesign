@@ -38,7 +38,7 @@ public class ShortRangedTeleport : MonoBehaviour
             
             baseCooldown = shortCooldown; // Cooldown reset
         }
-        if (shortOnCooldown == true) // Cooldown calculations
+         else if (shortOnCooldown == true) // Cooldown calculations
         {
             baseCooldown -= Time.deltaTime;
             if (baseCooldown <= 0)
