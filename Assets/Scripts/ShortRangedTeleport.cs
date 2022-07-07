@@ -44,8 +44,9 @@ public class ShortRangedTeleport : MonoBehaviour
             if (baseCooldown <= 0)
             {
                 shortOnCooldown = false;
-                
-                
+                source.clip = sounds[3];
+                source.PlayOneShot(source.clip);
+
             }
             else
             {

@@ -41,6 +41,8 @@ public class LongRangedTeleport : MonoBehaviour
             if (baseCooldown <= 0)
             {
                 longOnCooldown = false;
+                source.clip = sounds[3];
+                source.PlayOneShot(source.clip);
             }
             else
             {
