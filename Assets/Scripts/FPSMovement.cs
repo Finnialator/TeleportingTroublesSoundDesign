@@ -1,4 +1,4 @@
-﻿using System;
+﻿//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,12 +49,14 @@ public class FPSMovement : MonoBehaviour
 
     // audio bool
     private bool canPlay = false;
+    public AudioClip[] sounds;
+    private AudioSource source;
 
     void Awake()
     {
         m_finalSpeed = m_movementSpeed;
         m_charController.height = 1.8f;
-        
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -132,6 +134,8 @@ public class FPSMovement : MonoBehaviour
             {
                 // Play jump landing audio here
                 canPlay = false;
+                source.clip = sounds[Random.Range(0, 2)];
+                source.PlayOneShot(source.clip);
             }
         }
     }
