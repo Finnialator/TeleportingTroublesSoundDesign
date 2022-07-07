@@ -1425,9 +1425,21 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3020366304088509113, guid: ed63680e020234540b4a593aa370430c, type: 3}
+      propertyPath: sounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3020366304088509113, guid: ed63680e020234540b4a593aa370430c, type: 3}
       propertyPath: m_groundMask.m_Bits
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 3020366304088509113, guid: ed63680e020234540b4a593aa370430c, type: 3}
+      propertyPath: sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 06ef457f1e2d75247b7f167ceeb813e2, type: 3}
+    - target: {fileID: 3020366304088509113, guid: ed63680e020234540b4a593aa370430c, type: 3}
+      propertyPath: sounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: dbed42b663bdac442b0c9d4eecca0ff4, type: 3}
     - target: {fileID: 3020366304088509113, guid: ed63680e020234540b4a593aa370430c, type: 3}
       propertyPath: m_horizontalAirScaling
       value: 1
