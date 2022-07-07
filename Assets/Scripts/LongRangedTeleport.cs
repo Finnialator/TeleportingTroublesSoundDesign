@@ -23,6 +23,7 @@ public class LongRangedTeleport : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 1000))
             {
                 playerPos.transform.position = hit.point; // Teleport
+                // Play audio for teleport activation here
                 longOnCooldown = true;
                 baseCooldown = longCooldown; // Cooldown reset
             }
@@ -33,6 +34,10 @@ public class LongRangedTeleport : MonoBehaviour
             if (baseCooldown <= 0)
             {
                 longOnCooldown = false;
+            }
+            else
+            {
+                // Play audio for teleport cooldown currently active here
             }
         }
     }

@@ -24,6 +24,7 @@ public class ShortRangedTeleport : MonoBehaviour
         if (Input.GetKey(m_short) && shortOnCooldown == false) // Activates Short-Ranged Teleportation
         {
             playerPos.transform.position += playerPos.transform.forward * shortTeleport; // Teleport
+            // Play audio for teleport activation here
             shortOnCooldown = true;
             baseCooldown = shortCooldown; // Cooldown reset
         }
@@ -33,6 +34,10 @@ public class ShortRangedTeleport : MonoBehaviour
             if (baseCooldown <= 0)
             {
                 shortOnCooldown = false;
+            }
+            else
+            {
+                // Play audio for teleport cooldown currently active here
             }
         }
     }

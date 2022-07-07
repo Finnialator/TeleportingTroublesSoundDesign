@@ -47,6 +47,8 @@ public class FPSMovement : MonoBehaviour
     public float headRoom;
     private bool crouchSwitched;
 
+    // audio bool
+    private bool canPlay = false;
 
     void Awake()
     {
@@ -89,7 +91,6 @@ public class FPSMovement : MonoBehaviour
         RunCheck(); // Checks the input for run
         JumpCheck(); // Checks if we can jump        
 
-
         if (Input.GetKeyDown(m_crouch))
         {
             if (crouching)
@@ -115,6 +116,23 @@ public class FPSMovement : MonoBehaviour
             }
 
             CrouchCheck();
+        }
+
+
+        if (m_isGrounded == false)
+        {
+            if (canPlay == false)
+            {
+                canPlay = true;
+            }
+        }
+        if (m_isGrounded == true)
+        {
+            if (canPlay == true)
+            {
+                // Play jump landing audio here
+                canPlay = false;
+            }
         }
     }
 
