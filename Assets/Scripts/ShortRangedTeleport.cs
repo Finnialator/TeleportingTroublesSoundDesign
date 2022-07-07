@@ -1,4 +1,4 @@
-using System;
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,9 +11,15 @@ public class ShortRangedTeleport : MonoBehaviour
     public float shortCooldown = 3f;
     public KeyCode m_short;
     public float shortTeleport = 7.5f;
+    //Sound
+    public AudioClip[] sounds;
+    private AudioSource source;
+    
     void Start()
     {
         shortOnCooldown = false;
+
+        source = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -21,11 +27,15 @@ public class ShortRangedTeleport : MonoBehaviour
     }
     void ShortTeleport()
     {
-        if (Input.GetKey(m_short) && shortOnCooldown == false) // Activates Short-Ranged Teleportation
+        if (Input.GetKeyDown(m_short) && shortOnCooldown == false) // Activates Short-Ranged Teleportation
         {
             playerPos.transform.position += playerPos.transform.forward * shortTeleport; // Teleport
             // Play audio for teleport activation here
+            source.clip = sounds[Random.Range(0, 2)];
+            source.PlayOneShot(source.clip);
+            //Sound
             shortOnCooldown = true;
+            
             baseCooldown = shortCooldown; // Cooldown reset
         }
         if (shortOnCooldown == true) // Cooldown calculations
@@ -34,9 +44,17 @@ public class ShortRangedTeleport : MonoBehaviour
             if (baseCooldown <= 0)
             {
                 shortOnCooldown = false;
+                
+                
             }
             else
             {
+                if (Input.GetKeyDown(m_short))
+                {
+                    source.clip = sounds[2];
+                    source.Play();
+                    
+                }
                 // Play audio for teleport cooldown currently active here
             }
         }
