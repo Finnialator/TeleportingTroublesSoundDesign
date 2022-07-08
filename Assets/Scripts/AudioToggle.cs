@@ -11,14 +11,14 @@ public class AudioToggle : MonoBehaviour
         objectToggle.SetActive(false);
     }
     
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             objectToggle.SetActive(true);
         }
     }
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
