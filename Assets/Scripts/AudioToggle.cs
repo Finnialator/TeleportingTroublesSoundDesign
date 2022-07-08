@@ -18,6 +18,7 @@ public class AudioToggle : MonoBehaviour
             objectToggle.SetActive(true);
         }
     }
+    /*
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -25,4 +26,5 @@ public class AudioToggle : MonoBehaviour
             objectToggle.SetActive(false);
         }
     }
+    */
 }
